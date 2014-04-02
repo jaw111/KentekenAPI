@@ -11,15 +11,17 @@ Alle informatie behorende bij een kenteken.
     + kenteken (required, string, `70rpjj`) ... Het `kenteken` van het betreffende voertuig.
 
 ### Haal kenteken op [GET]
-+ Response 200 (application/json)
++ Response 200 (application/ld+json)
 
     + Body
 
             {
                 "@context": {
-                    "@base": "http://purl.org/rdw/vehicles#",
+                    "@language": "nl",
                     "foaf": "http://xmlns.com/foaf/0.1/",
-                    "rdwv": "http://purl.org/rdw/vehicles#",
+                    "rdwv": "https://w3id.org/rdw/vehicles#",
+                    "dbpedia": "http://dbpedia.org/resource/",
+                    "label": "http://www.w3.org/2000/01/rdf-schema#label",
                     "resource": "foaf:topic",
                     "Aantalcilinders": {
                         "@id": "rdwv:numberOfCylinders",
@@ -186,8 +188,10 @@ Alle informatie behorende bij een kenteken.
                         "@type": "@id"
                     }
                 },
+                "@id": "",
                 "success" : true,
                 "resource" : {
+                    "@id": "#this",
                     "Aantalcilinders" : 4,
                     "Aantalstaanplaatsen" : null,
                     "Aantalzitplaatsen" : 5,
@@ -202,13 +206,19 @@ Alle informatie behorende bij een kenteken.
                     "DatumeersteafgifteNederland" : "2005-07-20T00:00:00",
                     "Datumeerstetoelating" : "2005-07-20T00:00:00",
                     "Eerstekleur" : {
-                        "label" : "ROOD",
-                        "@id" : "rdwv:Red"
+                        "@id" : "rdwv:Red",
+                        "label" : "Rood"
                     },
-                    "G3installatie" : "N.v.t.",
+                    "G3installatie" : null,
                     "Handelsbenaming" : "206; 1.4 3DRS",
-                    "Hoofdbrandstof" : "Benzine",
-                    "Inrichting" : "hatchback",
+                    "Hoofdbrandstof" : {
+                        "@id": "rdwv:Benzine",
+                        "label": "Benzine"
+                    },
+                    "Inrichting" : {
+                        "@id": "dbpedia:Hatchback",
+                        "label": "Hatchback"
+                    },
                     "Kenteken" : "70RPJJ",
                     "Laadvermogen" : null,
                     "Massaleegvoertuig" : 925,
@@ -220,20 +230,26 @@ Alle informatie behorende bij een kenteken.
                     "Maximumtetrekkenmassaongeremd" : 510,
                     "Maximumtetrekkenmassaopleggergeremd" : null,
                     "Merk" : {
-                        "label" : "PEUGEOT",
-                        "@id" : "http://dbpedia.org/resource/Peugeot"
+                        "@id" : "dbpedia:Peugeot",
+                        "label" : "Peugeot"
                     },
-                    "Milieuclassificatie" : "Niet geregistreerd",
-                    "Nevenbrandstof" : "Niet geregistreerd",
+                    "Milieuclassificatie" : null,
+                    "Nevenbrandstof" : null,
                     "Retrofitroetfilter" : false,
                     "Toegestanemaximummassavoertuig" : 1450,
-                    "Tweedekleur" : "Niet geregistreerd",
+                    "Tweedekleur" : null,
                     "Vermogen" : 55,
                     "Vermogenbromsnorfiets" : null,
                     "VervaldatumAPK" : "2014-04-02T00:00:00",
-                    "Voertuigsoort" : "Personenauto",
+                    "Voertuigsoort" : {
+                        "@id": "rdwv:PassengerVehicle",
+                        "label": "Personenauto"
+                    },
                     "Wachtopkeuren" : false,
                     "WAMverzekerdgeregistreerd" : true,
-                    "Zuinigheidslabel" : "C"
+                    "Zuinigheidslabel" : {
+                        "@id": "rdwv:EfficiencyLabelC",
+                        "label": "C"
+                    }
                 }
             }
