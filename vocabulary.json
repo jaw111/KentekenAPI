@@ -1554,8 +1554,7 @@
                 "Efficiency label A",
                 {
                     "@value": "Zuinigheidslabel A",
-                    "@language": "nl",
-                    "rdfs:seeAlso": "http://www.auto4me.nl/a.php"
+                    "@language": "nl"
                 }
             ],
             "rdfs:comment": [
@@ -1564,7 +1563,8 @@
                     "@value": "De waarde A staat voor 'minstens 20% zuiniger dan gemiddeld'.",
                     "@language": "nl"
                 }
-            ]
+            ],
+            "rdfs:seeAlso": "http://www.auto4me.nl/a.php"
         },
         {
             "@id": "rdwv:EfficiencyLabelB",
@@ -1573,8 +1573,7 @@
                 "Efficiency label B",
                 {
                     "@value": "Zuinigheidslabel B",
-                    "@language": "nl",
-                    "rdfs:seeAlso": "http://www.auto4me.nl/b.php"
+                    "@language": "nl"
                 }
             ],
             "rdfs:comment": [
@@ -1583,7 +1582,8 @@
                     "@value": "De waarde B staat voor '10% tot 20% zuiniger dan gemiddeld'.",
                     "@language": "nl"
                 }
-            ]
+            ],
+            "rdfs:seeAlso": "http://www.auto4me.nl/b.php"
         },
         {
             "@id": "rdwv:EfficiencyLabelC",
@@ -1592,8 +1592,7 @@
                 "Efficiency label C",
                 {
                     "@value": "Zuinigheidslabel C",
-                    "@language": "nl",
-                    "rdfs:seeAlso": "http://www.auto4me.nl/c.php"
+                    "@language": "nl"
                 }
             ],
             "rdfs:comment": [
@@ -1602,7 +1601,8 @@
                     "@value": "De waarde C staat voor 'maximaal 10% zuiniger dan gemiddeld'.",
                     "@language": "nl"
                 }
-            ]
+            ],
+            "rdfs:seeAlso": "http://www.auto4me.nl/c.php"
         },
         {
             "@id": "rdwv:EfficiencyLabelD",
@@ -1611,8 +1611,7 @@
                 "Efficiency label D",
                 {
                     "@value": "Zuinigheidslabel D",
-                    "@language": "nl",
-                    "rdfs:seeAlso": "http://www.auto4me.nl/d.php"
+                    "@language": "nl"
                 }
             ],
             "rdfs:comment": [
@@ -1621,7 +1620,8 @@
                     "@value": "De waarde D staat voor 'maximaal 10% onzuiniger dan gemiddeld'.",
                     "@language": "nl"
                 }
-            ]
+            ],
+            "rdfs:seeAlso": "http://www.auto4me.nl/d.php"
         },
         {
             "@id": "rdwv:EfficiencyLabelE",
@@ -1630,8 +1630,7 @@
                 "Efficiency label E",
                 {
                     "@value": "Zuinigheidslabel E",
-                    "@language": "nl",
-                    "rdfs:seeAlso": "http://www.auto4me.nl/e.php"
+                    "@language": "nl"
                 }
             ],
             "rdfs:comment": [
@@ -1640,7 +1639,8 @@
                     "@value": "De waarde E staat voor '10% tot 20% onzuiniger dan gemiddeld'.",
                     "@language": "nl"
                 }
-            ]
+            ],
+            "rdfs:seeAlso": "http://www.auto4me.nl/e.php"
         },
         {
             "@id": "rdwv:EfficiencyLabelF",
@@ -1649,8 +1649,7 @@
                 "Efficiency label F",
                 {
                     "@value": "Zuinigheidslabel F",
-                    "@language": "nl",
-                    "rdfs:seeAlso": "http://www.auto4me.nl/g.php"
+                    "@language": "nl"
                 }
             ],
             "rdfs:comment": [
@@ -1659,7 +1658,8 @@
                     "@value": "De waarde F staat voor '20% tot 30% onzuiniger dan gemiddeld'.",
                     "@language": "nl"
                 }
-            ]
+            ],
+            "rdfs:seeAlso": "http://www.auto4me.nl/g.php"
         },
         {
             "@id": "rdwv:EfficiencyLabelG",
@@ -1668,8 +1668,7 @@
                 "Efficiency label G",
                 {
                     "@value": "Zuinigheidslabel G",
-                    "@language": "nl",
-                    "rdfs:seeAlso": "http://www.auto4me.nl/g.php"
+                    "@language": "nl"
                 }
             ],
             "rdfs:comment": [
@@ -1678,7 +1677,8 @@
                     "@value": "De waarde G staat voor 'minstens 30% onzuiniger dan gemiddeld'.",
                     "@language": "nl"
                 }
-            ]
+            ],
+            "rdfs:seeAlso": "http://www.auto4me.nl/g.php"
         }
     ]
 }
