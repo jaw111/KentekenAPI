@@ -25,12 +25,7 @@ $dElements = $mProperties->children('d', TRUE);
 $jsonArray = array();
 
 if ($contentType == 'application/ld+json') {
-    $contextFile = json_decode(file_get_contents('https://w3id.org/rdw/contexts/vehicles'))->{'@context'};
-    if (isset($_GET['inlineContext']) && $_GET['inlineContext'] == 'true') {
-        $context = $contextFile->{'@context'};
-    } else {
-        $context = 'https://w3id.org/rdw/contexts/vehicles';
-    }
+    $context = 'https://w3id.org/rdw/contexts/vehicles';
 }
 
 foreach ($dElements as $key => $element) {
@@ -248,6 +243,13 @@ foreach ($dElements as $key => $element) {
                     continue;
                 }
                 break;
+            case 'Voertuigsoort':
+                if (!isset($vehicleTypes[$element])) {
+                    continue;
+                }
+                $id = 'rdwv:' . $vehicleTypes[$element];
+                $label = $element;
+                break;
             case 'Zuinigheidslabel':
                 if (!isset($zuinigheidsLabels[$element])) {
                     continue;
@@ -266,7 +268,7 @@ foreach ($dElements as $key => $element) {
 }
 
 if (isset($context)) {
-    $data = ['@context' => $context, 'resource' => $jsonArray];
+    $data = ['@context' => $context, '@id' => '', 'resource' => ['@id' => '#this'] + $jsonArray];
 } else {
     $data = ['resource' => $jsonArray];
 }
