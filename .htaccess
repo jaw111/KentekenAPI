@@ -4,4 +4,4 @@ RewriteEngine On
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 
-RewriteRule ^kentekens/(\w+)*$ ./index.php?kenteken=$1
+RewriteRule ^kentekens/(\w+)*$ ./index.php?kenteken=$1 [L,QSA]
