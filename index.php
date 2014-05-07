@@ -212,6 +212,19 @@ foreach ($dElements as $key => $element) {
                 $id = 'rdwv:' . $colors[$element];
                 $label = ucfirst(strtolower($element));
                 break;
+            case 'Handelsbenaming':
+
+                if (!$type = strstr($element, ';', true)) {
+                    $type = $element;
+                }
+
+                if ($car = lookup((string) $dElements->Merk . ' ' . $type)) {
+                    $id = $car['uri'];
+                    $label = $car['label'];
+                } else {
+                    continue;
+                }
+                break;
             case 'Hoofdbrandstof':
             case 'Nevenbrandstof':
                 if (!isset($fuelTypes[$element])) {
@@ -228,8 +241,12 @@ foreach ($dElements as $key => $element) {
                 $label = $element;
                 break;
             case 'Merk':
-                $label = ucfirst(strtolower($element));
-                $id = 'dbpedia:' . $label;
+                if ($brand = lookup((string) $dElements->Merk)) {
+                    $id = $brand['uri'];
+                    $label = $brand['label'];
+                } else {
+                    continue;
+                }
                 break;
             case 'Zuinigheidslabel':
                 if (!isset($zuinigheidsLabels[$element])) {
@@ -254,3 +271,17 @@ if (isset($context)) {
     $data = ['resource' => $jsonArray];
 }
 echo json_encode($data);
+
+function lookup($q)
+{
+    if ($results = simplexml_load_file('http://lookup.dbpedia.org/api/search/KeywordSearch?QueryString=' . urlencode($q))) {
+        if ($results->Result) {
+            return [
+                'uri' => (string) $results->Result->URI,
+                'label' => (string) $results->Result->Label,
+            ];
+        }
+    }
+
+    return false;
+}
