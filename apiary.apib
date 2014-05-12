@@ -11,6 +11,27 @@ Alle informatie behorende bij een kenteken.
     + kenteken (required, string, `70rpjj`) ... Het `kenteken` van het betreffende voertuig.
 
 ### Haal kenteken op [GET]
+
++ Request A
+
+    + Headers
+    
+            Accept: application/json
+
++ Response 200 (application/json)
+    
+    + Body
+    
+            {
+                "success" : true
+            }
+
++ Request B
+
+    + Headers
+
+            Accept: application/ld+json
+
 + Response 200 (application/ld+json)
 
     + Body
